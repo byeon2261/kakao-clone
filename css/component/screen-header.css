@@ -1,29 +1,53 @@
 .screen-header {
-    /* margin-top: 30px; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--horizontal-space);
-    margin-bottom: 15px;
+  /* margin-top: 30px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--horizontal-space);
+  margin-bottom: 15px;
 }
 
 .screen-header__title {
-    font-size: 32px;
-    font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .screen-header__icons span {
-    margin-left: 25px;
-    position: relative;
+  margin-left: 25px;
+  position: relative;
 }
 
 .screen-header__icons-info {
-    background-color: #FF6129;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    right: -70px;
-    bottom: 25px;
+  background-color: #ff6129;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  right: -70px;
+  bottom: 25px;
+}
+
+@keyframes magnifyingGlassEffact {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 360deg);
+  }
+}
+.screen-header__icons .fa-magnifying-glass:hover {
+  animation: magnifyingGlassEffact 2s linear infinite;
+}
+
+@keyframes cogEffect {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.screen-header__icons .fa-cog:hover {
+  animation: cogEffect 1.5s linear infinite;
 }

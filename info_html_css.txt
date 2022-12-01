@@ -1,0 +1,23 @@
+
+
+...
+
+##### 6. Cloning Time
+
+...
+splash screen을 애니메이션으로 숨겨도 해당 객체가 사라진것이 아니기때문에 클릭이 되질 않는다.
+  @keyframes hidesplashscreen {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      z-index: 999; /// 이걸 써도 먹히지 않는다.
+    }
+  }
+
+  #splash-screen {
+    animation: hidesplashscreen 1s ease-in-out forwards;
+  }
+이때 forwards를 사용해주면 애니메이션이 종료되고도 to 적용사항이 계속 유지된다.
+visibility: hidden를 사용하면 클릭 상호작용에 걸리지 않게된다.
